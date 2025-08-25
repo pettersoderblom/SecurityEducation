@@ -1,0 +1,87 @@
+﻿@using SecurityEducation.Dtos
+@using System.Text.Json
+
+@{
+    ViewData["Title"] = "Översikt";
+}
+<link href="~/css/overview.css" rel="stylesheet" asp-append-version="true"/>
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> *@
+<div class="wrapper">
+    <h2 id="intro-text">Mina framsteg</h2>    
+    <div class="overview-div">
+        <div class="total-star-wrapper">
+        <div class="total-star-div"></div>
+        </div>
+
+        @foreach(var chapter in Model.Chapters)
+        {            
+            <div class="chapter-episode-div">
+                <a>
+                    <div class="chapter-div" data-chapter-div="@chapter.Id">
+                        <p class="chapter-name">@chapter.Name</p>
+                        <div class="chapter-medal-div">
+                            <p class="medal-text"></p>
+                            <img alt="" class="chapter-medal" />
+                        </div>               
+                        
+                    </div>                    
+                </a>
+                <div class="episode-container">
+                @foreach(var episode in ((List<EpisodeDto>)Model.Episodes).Where(e => e.ChapterId == chapter.Id))
+                {
+                        <a class="epi-focus" href="@Url.Action("ReadingMaterials", "ReadingMaterial", new { chapterId = chapter.Id, episodeId = episode.Id })">
+                            <div class="episode-div" data-episode-div="@episode.Id">
+                            <p class="episode-name">@episode.Name</p>
+                            <div class="episode-result">
+                                <div class="episode-medal-div">
+                                    <p class="episode-medal-text"></p>
+                                    <img alt="" class="episode-medal"/>
+                                </div>
+                                <div class="episode-star-div" data-episode-star-div="@episode.Id">
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </a>
+                }
+                </div>
+            </div>
+        }
+        
+        <div class="examination-container">
+            <a>
+                <div class="examination-div">
+                    <p class="examination-name">Slutprov</p>
+                    <div class="examination-medal-div">
+                        <p class="medal-text"></p>
+                        <img class="examination-medal"/>
+                    </div>
+                    <div class="examination-star-div">
+                    </div>
+                </div>
+            </a>  
+            <form method="get" asp-controller="Pdf" asp-action="GeneratePdf">
+                <input type="hidden" name="Name" id="nameInput" />
+                <input type="hidden" name="AmountOfStars" id="starsInput" />
+                <input type="hidden" name="Chapters" id="chaptersInput" />
+                <input type="hidden" name="Episodes" id="episodesInput" />
+                <button id="diploma-btn" hidden="hidden" aria-label="Ladd ner intyg för avklarad utbildning" type="submit">Ladda ner Intyg</button>
+            </form>
+        </div>
+        
+        <div class="btn-div">
+            <button aria-label="Gå till välj kapitel" id="start-btn" onclick="location.href = '@Url.Action("Index", "Chapter")'">Gå till Välj kapitel</button>
+            <button aria-label="Gå tillbaka till startsidan" id="back-btn" onclick="location.href = '@Url.Action("Index", "Home")'">Gå till startsidan!</button>
+        </div>
+        
+    </div>
+    
+</div>
+<script>
+    var chapters = @Html.Raw(JsonSerializer.Serialize((List<ChapterDto>)Model.Chapters));
+    var episodes = @Html.Raw(JsonSerializer.Serialize((List<EpisodeDto>)Model.Episodes));
+</script>
+
+<script src="~/js/xapiwrapper.min.js"></script>
+<script type="module" src="~/js/Overview.js"></script>
+

@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Instruktioner";
+
+}
+
+<link rel="stylesheet" href="/css/instructions.css" asp-append-version="true" />
+
+<div class="instruction-container">
+    <h1>Så här går det till</h1>
+
+    <h4>Välkommen till din utbildning inom cyber- och informationssäkerhet, dataskydd samt AI! Utbildningen är uppdelad i tre kapitel och varje kapitel har mellan tre och fem avsnitt enligt följande:</h4>
+        <div class="list-container">
+        <ul>
+            <h4>Cybersäkerhet</h4>            
+            <li>Avsnitt 1: På och utanför arbetsplatsen</li>
+            <li>Avsnitt 2: Nätfiske</li>
+            <li>Avsnitt 3: Skadlig kod och virus</li>
+        </ul>
+        <br />
+        <ul>
+            <h4>Informationssäkerhet och dataskydd</h4>
+            <li>Avsnitt 1: Utanför arbetsplatsen</li>
+            <li>Avsnitt 2: Incidenter</li>
+            <li>Avsnitt 3: E-post</li>
+            <li>Avsnitt 4: Lösenord och användarprofil</li>
+            <li>Avsnitt 5: Informationssäkerhetsklassning</li>
+        </ul>
+        <br />
+        <ul>
+            <h4>AI</h4>
+            <li>Avsnitt 1: Introduktion till AI</li>
+            <li>Avsnitt 2: Regler vid användning av AI</li>
+            <li>Avsnitt 3: Hantering av resultat och källkritik</li>
+        </ul>
+        </div>    
+    <br />
+    <div class="info-img-container">
+        <img src="~/images/Kotte_med_pekpinne.png" alt="Igelkott med pekpinne" />
+        <p>
+            Varje avsnitt inleds med en till tre korta sidor utbildningsmaterial som tar några minuter att läsa Avsnittet avslutas med ett avsnittsprov.<br /><br />
+            Avsnittsproven har fem frågor med respektive fyra svarsalternativ. När du svarat på sista frågan kommer du kunna rätta ditt prov. För att bli godkänd på provet krävs minst tre rätt av de fem frågorna.<br /><br />
+            När du klarat ett prov kommer det att synas på Välj avsnitt samt på Mina framsteg. Om du vill kan du göra om provet för att förbättra ditt resultat samla fler stjärnor och bättre medaljer.<br /><br />
+            När du klarat alla avsnittsprov låses slutprovet upp. Ett avklarat slutprovet är beviset på att du klarat utbildningen. Slutprovet består av tio slumpmässiga frågor från alla kapitel och det krävs sju rätt för att du ska bli godkänd.<br /><br />
+            Lycka till!
+        </p>
+
+        
+
+    </div>
+    <div class="button-container">
+        <button aria-label="Gå tillbaka till startsidan" id="back-btn" onclick="history.back()">Gå tillbaka till startsidan</button>
+        <button aria-label="Gå tillbaka till välj kapitel" id="start-btn" onclick="location.href = '@Url.Action("Index", "Chapter")'">Gå till Välj kapitel</button>
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+﻿@using System.Text.Json
+@using SecurityEducation.Dtos
+
+@{
+    ViewData["Title"] = "Kapitel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* @{
+    var chapters = JsonSerializer.Serialize((List<ChapterDto>)Model.Chapters);
+    
+} *@
+<link rel="stylesheet" href="~/css/chapter.css" asp-append-version="true" />
+<div>
+    <h2>Välj kapitel</h2>
+</div>
+<div class="chapter-container">
+    @foreach (var chapter in Model.Chapters)
+    {
+        <a class="chapter-div" href="@Url.Action("Episodes", "Episode", new { id = chapter.Id })" data-chapter-div="@chapter.Id" style="text-decoration: none; color: inherit;">
+            <p class="chapter-name">@chapter.Name</p>
+            <p class="estimated-time">Uppskattad tidsåtgång: ca @chapter.EstimatedTime</p>
+            <div class="result-div" data-result-div="@chapter.Id">
+                <p class="completed"></p>
+                <p class="completed-episodes"></p>
+            </div>
+            <img alt=" @chapter.ImageAltText" src ="@chapter.ImageUrl" />
+            <p class="chapter-description">@chapter.Description</p>
+            <p class="enter-chapter">Öppna kapitel</p>
+        </a>
+    }
+    <a id="examination" style="cursor: pointer;">
+        <div class="chapter-div">
+            <p class="exam-name">Slutprov</p>
+            <p class="estimated-time">Uppskattad tidsåtgång: ca 5 min</p>
+            <div class="result-div" style="margin-bottom:35px;">
+                <p class="completed"></p>
+                
+            </div>
+            <img src="~/images/Kotte_med_dator_halvkropp.png" alt="Igelkott som sitter med en dator vid ett bord."/>
+            <p class="chapter-description">Detta prov blandar frågor från samtliga kapitel och är sista steget för att klara utbildningen</p>
+            <p class="enter-exam">Öppna slutprov</p>
+        </div>
+    </a>
+</div>
+<div class="button-container">
+    <button aria-label="Gå till startsidan" id="back-btn" onclick="location.href = '@Url.Action("Index", "Home")'">Gå till startsidan</button>
+</div>
+
+<script>
+    var chapters = @Html.Raw(JsonSerializer.Serialize((List<ChapterDto>)Model.Chapters));
+    
+    const examUrl = '@Url.Action("Examination", "Test")';
+
+</script>
+
+<script src="~/js/Chapter.js"></script>

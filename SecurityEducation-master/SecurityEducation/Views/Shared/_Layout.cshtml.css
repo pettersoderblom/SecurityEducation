@@ -1,0 +1,35 @@
+﻿
+.navbar {
+    background: #2a6f97; 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #fff !important;
+        font-weight: 500;
+        text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: #ffd700 !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+li {
+    margin-left: 20px;
+}
+.footer {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    flex-shrink: 0;
+
+}

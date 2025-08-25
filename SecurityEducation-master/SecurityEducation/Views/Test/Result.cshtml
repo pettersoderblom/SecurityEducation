@@ -1,0 +1,48 @@
+﻿@using System.Text.Json
+@using SecurityEducation.Dtos
+@{
+    ViewData["Title"] = "Resultat";
+}
+@{
+    bool isExamination = false;
+}
+
+<link href="~/css/result.css" rel="stylesheet" asp-append-version="true" />
+
+<div class="result-div">
+    <h2>Ditt Resultat!</h2>
+    <p id="result"></p>
+    <div class="medal-container">
+        <div class="episode-medal-container-div">
+        <p class="episode-congrat-text"></p>
+            <div class="episode-medal-div">            
+                <p class="episode-medal-text"></p>
+                <img class="episode-medal" />
+            </div>
+        </div>
+        <div class="chapter-medal-container-div">
+            <p class="chapter-congrat-text"></p>
+            <div class="chapter-medal-div">
+                <p class="chapter-medal-text"></p>
+                <img class="chapter-medal" />
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="button-container">
+        <button aria-label="Gå till startsidan" id="start-page-btn" onclick="location.href = '@Url.Action("Index", "Home")'">Gå till startsidan</button>
+        <button aria-label="Gå till mina framsteg" id="overview-page-btn" onclick="location.href = '@Url.Action("Overviews", "Overview")'">Gå till Mina framsteg</button>
+    </div>
+</div>
+
+
+
+<script>
+    window.viewModel = @Html.Raw(JsonSerializer.Serialize(Model));
+    var isExamination = @Html.Raw(JsonSerializer.Serialize(isExamination));
+</script>
+<script src="~/js/xapiwrapper.min.js"></script>
+<script type="module" src="~/js/Result.js"></script>
+
+

@@ -1,0 +1,180 @@
+﻿
+
+.chapter-container {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    
+}
+.estimated-time{
+    font-weight:bold;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.chapter-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Trycker ner knappen till botten */
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 308px;
+    align-items: center;
+    text-align: center;
+    background-color: #EDF3F9;
+    min-height: 650px;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.chapter-div:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px black;
+    border: 2px solid black;
+}
+
+.chapter-div:hover {
+    transform: translateY(-5px); /* Flyttar upp rutan 5px */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Större skugga för mer djupkänsla */
+}
+.chapter-div img {
+        width: auto;
+        max-height: 150px;
+        border-radius: 20px;
+        /*margin-bottom: 10px;*/
+        text-align: center;
+}
+.chapter-name{
+    font-size:20px;
+    text-align:center;
+    font-weight: bold;
+    min-height: 60px;
+    margin-bottom: 0px;
+}
+.chapter-description{
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+}
+.chapter-btn{
+    width: 100px;
+    height: 75px;
+    border-radius: 10px;
+}
+.completed {
+    margin: auto;
+    padding: 10px;
+    border: 1px, solid, black;
+    background: green;
+    color: white;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.completed-episodes{
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+#back-btn {
+    border-radius: 20px;
+    background-color: #0000CD;
+    font-weight: bold;
+    color: white;
+    font-size: 32px;
+    width: 90%;
+    max-width: 600px;
+    height: 100px;
+}
+
+#back-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px black;
+    border: 2px solid black;
+}
+
+.exam-name {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 48px;
+}
+#examination {
+    color:black;
+    position: relative;
+    text-decoration:none;
+    min-height: 650px;
+    margin: 0px;
+}
+    #examination:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px black;
+        border: 2px solid black;
+        border-radius:20px;
+    }
+
+.button-container {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.enter-chapter {
+    height: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; 
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0px 30px; 
+    background: green;
+    white-space: nowrap;
+    width: fit-content; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+.enter-exam {
+    height: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; 
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0px 30px; 
+    background: green;
+    white-space: nowrap;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(128, 128, 128 , 0.4);
+}
+h2 {
+    text-align: center;
+    color: white;
+}
+
+
+
+
+

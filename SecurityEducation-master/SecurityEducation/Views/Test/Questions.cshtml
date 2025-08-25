@@ -1,0 +1,71 @@
+﻿@using SecurityEducation.Dtos
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Frågor";
+}
+
+@{
+    var answers = JsonSerializer.Serialize((List<AnswerDto>)Model.Answers);
+}
+<link href="~/css/Questions.css" rel="stylesheet" asp-append-version="true"/>
+
+
+<form id="answerForm" >
+    <!-- eller vilken action du vill skicka till -->
+    <div class="questionSlideCont">
+        @foreach (var question in Model.Questions)
+        {
+            <div class="mySlides">
+                <div class="question-block" style="margin-bottom: 20px;">
+                    <h2>@question.Title</h2>
+                    <div class="answer-grid">
+                        @foreach (var answer in ((List<AnswerDto>)Model.Answers).Where(a => a.QuestionId == question.Id))
+                        {
+                            <div class="answer-box">
+                                <input type="radio"
+                                       name="SelectedAnswers[@question.Id]"
+                                       value="@answer.Id"
+                                       id="@question.Id-@answer.Id"
+                                       class="hidden-radio" />
+                                <label for="@question.Id-@answer.Id">
+                                    @answer.Title
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button aria-label="Tillbaka till föregående fråga" type="button" class="prev" onclick="plusSlides(-1)">Tillbaka</button>
+                    <button aria-label="Till nästa fråga" type="button" class="next" onclick="plusSlides(1)">Nästa</button>
+                </div>
+            </div>
+        }
+        <div class="mySlides">
+            <h3>Vill du rätta ditt prov?</h3>
+            
+            
+            <div class="nav-buttons">
+                <button aria-label ="Gå tillbaka" type="button" class="prev" onclick="plusSlides(-1)">Tillbaka</button>
+                <button aria-label="Rätta mitt prov" id="check-answer" type='button' onclick="checkAnswers(@ViewBag.ChapterId, @ViewBag.EpisodeId)">Rätta</button>
+            </div>
+        </div>
+        
+    </div>
+    <div style="text-align:center">
+        @for (int i = 0; i < Model.Questions.Count+1; i++)
+        {
+            <span class="dot" onclick="currentSlide(@(i + 1))"></span>
+        }
+    </div>
+
+    
+</form>
+
+
+<script>
+    var answers = @Html.Raw(answers);
+    var url = '@Url.Action("Result", "Test")';
+</script>
+<script src="~/js/Questions.js"></script>
+
+

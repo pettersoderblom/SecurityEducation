@@ -1,0 +1,59 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #EDF3F9;
+}
+.footer {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: #EDF3F9;    
+}
+
+.container {
+    color: black;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 1rem white, 0 0 0 1rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background: linear-gradient(to right,#012a4a, #014f86, #2a6f97, #2c7da0, #468faf, #89c2d9, #a9d6e5);
+}
+
+footer {
+  
+    position: relative;
+    z-index: 1;
+}

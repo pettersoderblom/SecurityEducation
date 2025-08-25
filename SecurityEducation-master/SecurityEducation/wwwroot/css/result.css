@@ -1,0 +1,218 @@
+﻿
+#diploma-btn {
+    background-color: forestgreen;
+    padding: 20px 100px;
+    margin:10px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+.result-div {
+    display: flex;    
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    padding: 20px;
+    background-color: #EDF3F9;
+    text-align: center;    
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#start-page-btn {
+    border-radius: 20px;
+    background-color: #0000CD;
+    font-weight: bold;
+    color: white;
+    font-size: 26px;
+    padding: 2%;
+    width: max-content;
+    min-width: 25%;
+    height: max-content;
+    margin: 5%;
+}
+
+#start-page-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px black;
+    border: 2px solid black;
+}
+
+
+#overview-page-btn {
+    border-radius: 20px;
+    background-color: #0000CD;
+    font-weight: bold;
+    color: white;
+    font-size: 26px;
+    padding: 2%;
+    width: max-content;
+    min-width: 25%;
+    height: max-content;
+    margin: 5%;
+}
+
+#overview-page-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px black;
+    border: 2px solid black;
+}
+
+
+.star {
+    font-size: 62px;
+    color: gold;
+    margin-right: 4px;
+    text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+}
+
+.star-empty {
+    font-size: 62px;
+    color: transparent;
+    text-shadow: -0.001px -0.001px 0 #000, 0.001px -0.001px 0 #000, -0.001px 0.001px 0 #000, 0.001px 0.001px 0 #000;
+}
+
+img {
+    width: 200px;
+}
+
+.episode-medal-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 90px;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 2px 4px 20px;
+}
+
+.episode-medal-text {
+    position: absolute;
+    top: 12px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.episode-medal {
+    position: absolute;
+    bottom: 7px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.medal-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chapter-medal-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 90px;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 2px 4px 20px;
+
+}
+
+.chapter-medal-text {
+    position: absolute;
+    top: 12px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.chapter-medal {
+    position: absolute;
+    bottom: 7px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.final-medal {
+    position: absolute;
+    bottom: 7px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.final-medal-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 90px;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 2px 4px 20px;
+}
+
+.final-medal-text {
+    position: absolute;
+    top: 12px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.final-medal-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 90px;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 2px 4px 20px;
+}
+.download-btn{
+    background-color: green;
+    padding: 20px 100px;
+    border-radius:20px;
+    font-weight: bold;
+    color:white;
+    font-size:20px;
+}
+
+@media (max-width: 320px) {
+    .star {
+        font-size: 40px;
+    }
+
+    .star-empty {
+        font-size: 40px;
+    }
+}
+
+
+
+
+
